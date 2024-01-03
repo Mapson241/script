@@ -1,0 +1,18 @@
+server {
+    listen 80;
+    server_name votredomaine.com; # Remplacez par votre domaine
+
+    root /chemin/vers/votre/application/dist;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+
+    # Configurations supplémentaires (si nécessaire)
+    # ...
+
+    # Configurations pour les logs (facultatif)
+    access_log /var/log/nginx/mon-site-access.log;
+    error_log /var/log/nginx/mon-site-error.log;
+}
